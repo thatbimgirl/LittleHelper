@@ -1,0 +1,53 @@
+﻿<Window x:Class="LittleHelper.ChatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ChatGPT Assistant" Height="400" Width="600" Background="#1D1A26">
+
+
+    <Window.Resources>
+        <!-- Style for rounded buttons with white text and no borders -->
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="3">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,5"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3" />
+                </Style>
+            </Style.Resources>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Conversation overview -->
+        <RichTextBox x:Name="ChatHistory" Grid.Row="0" Margin="10" IsReadOnly="True"
+                 VerticalScrollBarVisibility="Auto"
+                 />
+        <!-- Type messge field -->
+        <DockPanel Grid.Row="1" Margin="10" >
+            <TextBox x:Name="UserInput" Width="500" Height="30" Margin="0,0,10,0" />
+
+            <!-- "Send" Button -->
+            <Button Content="SEND" Width="50" Click="SendButton_Click" Background="#bc24ac"
+                    Style="{StaticResource RoundedButtonStyle}" />
+        </DockPanel>
+    </Grid>
+</Window>

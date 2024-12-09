@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<RevitAddIns>
+
+	<AddIn Type="Application">
+
+		<Name>Little Helper</Name>
+
+		<Assembly>"C:\ProgramData\Autodesk\Revit\Addins\2024\LittleHelper\LittleHelper.dll"</Assembly>
+
+		<AddInId>df10c66d-1d7d-46a3-807b-062161224796</AddInId>
+
+		<FullClassName>LittleHelper.App</FullClassName>
+
+		<VendorId>TBG Consult AB</VendorId>
+
+		<VendorDescription>info@tbg-consult.com - www.tbg-consult.com </VendorDescription>
+
+	</AddIn>
+
+</RevitAddIns>
